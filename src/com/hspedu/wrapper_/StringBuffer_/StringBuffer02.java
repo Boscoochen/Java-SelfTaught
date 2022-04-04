@@ -1,0 +1,10 @@
+package com.hspedu.wrapper_.StringBuffer_;
+
+public class StringBuffer02 {
+    public static void main(String[] args) {
+//        StringBuffer stringBuffer = new StringBuffer();
+//        StringBuffer stringBuffer1 = new StringBuffer(100);
+//        StringBuffer stringBuffer1 = new StringBuffer("hello");
+//        System.out.println();
+    }
+}
