@@ -3,7 +3,7 @@ package com.hspedu.cpu_;
 public class Thread01 {
     public static void main(String[] args) throws InterruptedException {
         Cat cat = new Cat();
-        cat.run();
+        cat.start();
         System.out.println("main thread continue exacute" + Thread.currentThread().getName());
         for (int i = 0; i < 60; i++) {
             System.out.println("main thread i=" + i);
