@@ -3,6 +3,9 @@ package com.hspedu.jdbc_;
 import com.mysql.jdbc.Driver;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -67,21 +70,33 @@ public class JdbcConn {
 
     }
 
-    @Test
-    public void connect04() {
-        Connection connection = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/db02";
-            String user = "root";
-            String password = "yonghuachen";
-            connection = DriverManager.getConnection(url, user, password);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        System.out.println(connection);
 
+    //recommend
+    @Test
+    public void connect04() throws ClassNotFoundException, SQLException {
+        Connection connection = null;
+
+        Class.forName("com.mysql.jdbc.Driver");
+        String url = "jdbc:mysql://localhost:3306/db02";
+        String user = "root";
+        String password = "yonghuachen";
+        connection = DriverManager.getConnection(url, user, password);
+
+        System.out.println(connection);
+    }
+
+    @Test
+    public void connect05() throws IOException, ClassNotFoundException, SQLException {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("src/mysql.properties"));
+        String user = properties.getProperty("user");
+        String password = properties.getProperty("password");
+        String url = properties.getProperty("url");
+        String driver = properties.getProperty("driver");
+
+        Connection connection = null;
+        Class.forName(driver);
+        connection = DriverManager.getConnection(url, user, password);
+        System.out.println(connection);
     }
 }

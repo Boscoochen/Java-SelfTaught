@@ -17,7 +17,9 @@ public class Jdbc01 {
         properties.setProperty("password", "yonghuachen");
         Connection connect = driver.connect(url, properties);
 
-        String sql = "update actor set name = 'stephen chou' where id = 1";
+//        String sql = "insert into actor values(null, 'andy lou', 'm', '1970-11-11','110')";
+//        String sql = "update actor set name = 'stephen chou' where id = 1";
+        String sql = "delete from actor where id = 2";
         Statement statement = connect.createStatement();
         int rows = statement.executeUpdate(sql);
         System.out.println(rows > 0 ? "success" : "fail");
