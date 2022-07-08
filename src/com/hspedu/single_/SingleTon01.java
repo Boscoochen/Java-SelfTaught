@@ -3,9 +3,12 @@ package com.hspedu.single_;
 public class SingleTon01 {
     public static void main(String[] args) {
         GirlFriend instance = GirlFriend.getInstance();
-        System.out.println(instance);
+        System.out.println(instance.hashCode());
         GirlFriend instance1 = GirlFriend.getInstance();
-        System.out.println(instance1);
+        System.out.println(instance1.hashCode());
+        GirlFriend instance2 = GirlFriend.getInstance();
+        System.out.println(instance2.hashCode());
+
 //        System.out.println(GirlFriend.n1);
     }
 }
