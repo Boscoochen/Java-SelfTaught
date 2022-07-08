@@ -2,14 +2,14 @@ package com2.hspjy.chapter17_Thread.threaduse;
 
 public class Thread02 {
     public static void main(String[] args) {
-        Dog dog = new Dog();
-        Thread thread = new Thread(dog);
-        thread.start();
+//        Dog dog = new Dog();
+//        Thread thread = new Thread(dog);
+//        thread.start();
 
         //模拟Thread调用start（）
-//        Tiger tiger = new Tiger();
-//        ThreadProxy threadProxy = new ThreadProxy(tiger);
-//        threadProxy.start();
+        Tiger tiger = new Tiger();
+        ThreadProxy threadProxy = new ThreadProxy(tiger);
+        threadProxy.start();
     }
 }
 
